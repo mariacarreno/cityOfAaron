@@ -8,7 +8,7 @@ package cityofaaron;
 
 /**
  *
- * @author Usuario
+ * @author Usuario, npetersen
  */
 public class CityOfAaron {
 
