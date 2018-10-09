@@ -14,9 +14,9 @@ package model;
 
 public enum TeamMember {
     
-    TeamMember1("Maria Carreno", "Developer 1"),
-    TeamMember2("Nate Petersen", "Developer 2"),
-    TeamMember3("Rhett McDermott", "Developer 3");
+    TEAMMEMBER1("Maria Carreno", "Developer 1"),
+    TEAMMEMBER2("Nate Petersen", "Developer 2"),
+    TEAMMEMBER3("Rhett McDermott", "Developer 3");
         
     private String name;
     private String title;
