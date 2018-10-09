@@ -48,8 +48,8 @@ public class CityOfAaron {
          * and getDescription() methods to retrieve the name and description for 
          * that team member and display them on the console 
          */
-        System.out.println(TeamMember.TeamMember1.getName());
-        System.out.println(TeamMember.TeamMember1.getTitle());
+        System.out.println(TeamMember.TEAMMEMBER1.getName());
+        System.out.println(TeamMember.TEAMMEMBER1.getTitle());
         
     }
     
