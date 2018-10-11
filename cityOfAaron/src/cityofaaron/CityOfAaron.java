@@ -56,7 +56,15 @@ public class CityOfAaron {
          *
          */
         
+        /*
+         * ListItem test
+         */
+        ListItem item1 = new ListItem();
+        item1.setName("Test this is an item");       
+        item1.setNumber(34); 
         
+        System.out.println(item1.getName());
+        System.out.println(item1.getNumber());
         
     }
     

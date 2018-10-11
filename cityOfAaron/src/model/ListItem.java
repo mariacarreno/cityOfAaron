@@ -25,7 +25,7 @@ public class ListItem {
         return this.number;
     }
     
-    public void setName(int _number) {
+    public void setNumber(int _number) {
         this.number = _number;
     }    
     
