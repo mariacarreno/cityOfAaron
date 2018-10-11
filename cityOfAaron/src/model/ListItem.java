@@ -6,8 +6,7 @@
  */
 package model;
 /**
- *
- * @author Rhett McDermott
+ * @author Rhett McDermott 
  */
 public class ListItem {
     
