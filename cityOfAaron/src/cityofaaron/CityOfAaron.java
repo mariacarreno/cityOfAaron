@@ -7,6 +7,11 @@
 
 package cityofaaron;
 
+// Start imports for CropData test experiment
+import java.lang.reflect.Field;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+// End imports for CropData test experiment
 import model.*;
 
 /**
@@ -52,11 +57,6 @@ public class CityOfAaron {
         System.out.println(TeamMember.TEAMMEMBER1.getTitle());
         
         /*
-         * This is a test to show how Push works
-         *
-         */
-        
-        /*
          * ListItem test
          */
         ListItem item1 = new ListItem();
@@ -65,6 +65,37 @@ public class CityOfAaron {
         
         System.out.println(item1.getName());
         System.out.println(item1.getNumber());
+        
+        /* 
+         * CropData test. This test uses Reflection to introspect the CropData class and 
+         * loop through and print out each variable's name and value in the class.
+         * I did this as an experiment so that I didn't have to write a print statement
+         * for each getter method in the CropData class.
+         * see: https://stackoverflow.com/questions/3217603/how-to-print-values-of-an-object-in-java-when-you-do-not-have-the-source-code-for
+         */
+        CropData testCropData = new CropData();
+        
+        testCropData.setAcresOwned(2);
+        testCropData.setAcresPlanted(2);
+        testCropData.setCropYield(5);
+        testCropData.setHarvest(10);
+        testCropData.setNewPeople(3);
+        testCropData.setNumberWhoDied(6);
+        testCropData.setPopulation(1000);
+        testCropData.setWheatForFood(11);
+        testCropData.setWheatInStore(10);
+        testCropData.setYear(2018);
+        
+        for (Field field : testCropData.getClass().getDeclaredFields()) {
+            try {
+                field.setAccessible(true);
+                String name = field.getName();
+                Object value = field.get(testCropData);
+                System.out.printf("%s: %s%n", name, value);
+            } catch (IllegalArgumentException | IllegalAccessException ex) {
+                Logger.getLogger(CityOfAaron.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
     }
     
