@@ -57,6 +57,16 @@ public class CityOfAaron {
         System.out.println(TeamMember.TEAMMEMBER1.getTitle());
         
         /*
+         * Location call
+         */
+        Location mylocation = new Location();
+        mylocation.setDescription("My Location");       
+        mylocation.setSymbol("*"); 
+        
+        System.out.println(mylocation.getDescription());
+        System.out.println(mylocation.getSymbol());
+        
+        /*
          * ListItem test
          */
         ListItem item1 = new ListItem();
