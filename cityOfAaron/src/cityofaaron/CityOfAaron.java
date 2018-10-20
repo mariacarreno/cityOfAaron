@@ -57,7 +57,7 @@ public class CityOfAaron {
         System.out.println(TeamMember.TEAMMEMBER1.getTitle());
         
         /*
-         * Location call test María
+         * Location call test María 1
          */
         Location mylocation = new Location();
         mylocation.setDescription("My Location");       
