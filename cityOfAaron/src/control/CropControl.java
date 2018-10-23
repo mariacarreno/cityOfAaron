@@ -5,8 +5,8 @@
 //-------------------------------------------------------------
 package control;
 /**
- *
- * @author Usuario
+ Spring 2018
+ * Team members: Nate Petersen, Rhett McDermott, María Carreño.
  */
 import java.util.Random;
 import model.*;
@@ -64,5 +64,36 @@ public class CropControl {
              return owned;
     }
 
+    //The buyLand method
+   //purpose: To buy land
+   //Parameters: the price of the land, the number of acres to buy, and a reference to a CropData object.
+   //Returns: the amount of wheatInStore left after the sale.
+   //Pre-conditions: the number of wheatInStore is greater than or equal to landPrice times acresToBuy.
+    
+    public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
+    {
+      //landPrice = random number generated between 17 and 27
+      //acresToBuy = number entered by user
+      //if acresToBuy < 0, return -1
+        if(acresToBuy < 0)
+              return -1;
+        
+      //if acresToBuy * landPrice > wheatInStore, return -1
+       int acresland = acresToBuy * landPrice;
+       int wheat1 = cropData.getWheatInStore();
+        if(acresland > wheat1)
+              return -1;
+        
+      //acresOwned = acresOwned + acresToBuy
+        int owned1 = cropData.getAcresOwned();
+        owned1 += acresToBuy;
+        
+      //wheatInStore = wheatInStore – (acresToBuy * landPrice)
+          wheat1 -= (acresToBuy * landPrice);
+          cropData.setWheatInStore(wheat1);
+          return wheat1;
+          
+    }
+    
 }
 
