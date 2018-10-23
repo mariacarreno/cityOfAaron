@@ -92,8 +92,37 @@ public class CropControl {
           wheat1 -= (acresToBuy * landPrice);
           cropData.setWheatInStore(wheat1);
           return wheat1;
-          
-    }
+      }
+    
+    /**
+     * The feedPeople() method
+     * Purpose: To Set Aside Wheat to feed the People
+     * @parameter:  number of wheat that player want to set aside to feed  
+     * @parameter: a reference to a CropData object
+     * @ return the number of bushels of grain set aside to feed the people
+     * @ return the number of bushels of grain is left in storage
+     * Pre-conditions: bushels of grain set aside to feed must be positive
+     * and less than or equal the number of wheat in storage
+     */
+
+     public static int feedPeople(int SeetAsideWheat, CropData cropData)
+     {
+         
+        // If SeetAsideWheat < 0,  return -1
+            if(SeetAsideWheat < 0)
+                return -1;
+        //if SeetAsideWheat > WheathInStore,  return -1
+            int wheat2 = cropData.getWheatInStore();
+            if(SeetAsideWheat > wheat2)
+                   return -1;
+        //wheatInStore = wheatInStore – SeetAsideWheat
+             wheat2 -= SeetAsideWheat;
+             
+        //return SeetAsideWheat and WheatInStore
+             cropData.setWheatInStore(wheat2);
+             return SeetAsideWheat;
+     }
+
     
 }
 
