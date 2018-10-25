@@ -58,7 +58,7 @@ public class CropControlTest {
         int acresToBuy = 1;
         CropData cropData = new CropData();
         cropData.setAcresOwned(100);
-        // cropData.setWheatInStore(40);
+        cropData.setWheatInStore(40);
         int expResult = 20;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -77,7 +77,7 @@ public class CropControlTest {
         int acresToBuy = -10;
         CropData cropData = new CropData();
         cropData.setAcresOwned(100);
-        // cropData.setWheatInStore(40);
+        cropData.setWheatInStore(40);
         int expResult = -1;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -96,7 +96,7 @@ public class CropControlTest {
         int acresToBuy = 5;
         CropData cropData = new CropData();
         cropData.setAcresOwned(100);
-        // cropData.setWheatInStore(40);
+        cropData.setWheatInStore(40);
         int expResult = -1;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -115,7 +115,7 @@ public class CropControlTest {
         int acresToBuy = 2;
         CropData cropData = new CropData();
         cropData.setAcresOwned(100);
-        // cropData.setWheatInStore(40);
+        cropData.setWheatInStore(40);
         int expResult = 0;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
@@ -134,7 +134,7 @@ public class CropControlTest {
         int acresToBuy = 0;
         CropData cropData = new CropData();
         cropData.setAcresOwned(100);
-        // cropData.setWheatInStore(40);
+        cropData.setWheatInStore(40);
         int expResult = 40;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
