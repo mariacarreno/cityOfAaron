@@ -9,6 +9,7 @@ package control;
  * Team members: Nate Petersen, Rhett McDermott, María Carreño.
  */
 import java.util.Random;
+import java.util.Scanner;
 import model.*;
 
 public class CropControl {
@@ -165,6 +166,65 @@ public class CropControl {
          return returnValue;
          
      }
+     
+     
+     
+     //The plantCrops method
+    //purpose: To allocate seed for next years crops.
+    //Parameters: the acres of land planted, the number of wheat in store, and a reference to a CropData object.
+    //Returns: the number of acres planted and the amount of wheat left in storage.
+    //Pre-conditions: the city has enough land to plant, the city has enough people to tend the land, there is enough wheat in store to plant the number of acres of land.
+
+     
+         public static int plantCrops(int acresPlanted, int wheatInStore, int population1, CropData _cropData){
+             
+             int owned = _cropData.getAcresOwned();
+             int planted = acresPlanted;
+             int population = population1;
+             int wheat = wheatInStore;
+         
+             
+             
+             
+        //acresPlanted = number entered by user
+        /*Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Enter number of acres planted: ");
+        planted = keyboard.nextInt();
+        */
+      
+        
+        //acresPlanted > 0
+        if(planted < 0)
+              return -1;        
+        
+        //acresOwned >= acresPlanted
+        if(owned < planted)
+            return -1;
+        
+        //population >= acresPlanted / 10
+        int chk = planted / 10;
+        if(population < chk)
+            return -1;        
+        
+        //wheatInStore >= acresPlanted / 2
+         if(wheat < planted / 2)
+            return -1;         
+        
+        
+        //acresPlanted / 2
+        int wheatUsed = planted / 2;
+        
+        //wheatInStore  = wheatInStore - acresPlanted / 2
+        wheat = wheat - wheatUsed;
+        return wheat;
+
+      }
+
+     
+     
+     
+     
 
 }
 
