@@ -132,39 +132,25 @@ public class CropControl {
       * @return a valid offering percentage
       * Pre-conditions: if the harvest is > 0, the offering percentage must be > 0 
       */
-     
      public static int setOffering(int _offeringPercentage, CropData _cropData) {
          
          int op = _offeringPercentage;
          int harvest = _cropData.getHarvest();
-         int returnValue = -1;
          
-         // if the offering percentage is <= 0 OR > 100, the offering percentage is invalid. You can't give 0% or more than 100% of something.
-         if (op <= 0 || op > 100) {
-             returnValue = -1;
-         }
-         
-         // if the harvest is <= 0 AND the offering percentage is > 0, the offering percentage is set to 0. You can't give something from nothing. 
-         if (harvest <= 0 && op > 0) {
-             returnValue = 0;
-         }
-         
-         // if the harvest is > 0 AND the offering percentage is > 100 the offering percentage is invalid. You can't give more than 100% of something.
-         if (harvest > 0 && op > 100) {
-             returnValue = -1;
-         }
-         
-         // if the harvest is > 0 AND the offering percentage is > 0, but < 100, the offering percentage is valid. 
-         if (harvest > 0 && op > 0) {
-             if (op > 100) {
-                 returnValue = -1;
+         if (isOfferingInRange(op, 1, 100)) {
+             if (harvest >= 1) {
+                 return op;
              } else {
-                 returnValue = op;
+                 return 0;
              }
+         } else {
+             return -1;
          }
          
-         return returnValue;
-         
+     }
+     
+     private static boolean isOfferingInRange(int offeringPercentage, int min, int max) {
+         return (offeringPercentage >= min && offeringPercentage <= max);
      }
      
      
@@ -220,11 +206,6 @@ public class CropControl {
         return wheat;
 
       }
-
-     
-     
-     
-     
 
 }
 
