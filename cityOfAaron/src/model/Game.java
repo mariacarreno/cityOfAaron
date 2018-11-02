@@ -25,4 +25,16 @@ public class Game {
         this.thePlayer = _thePlayer;
     }
     
+    private CropData theCropData;
+    
+        public CropData getCropData() {
+        return this.theCropData;
+    }
+    
+        public void setCropData(CropData _theCropData) {
+        this.theCropData = _theCropData;
+    }
+        
+        
+    
 }

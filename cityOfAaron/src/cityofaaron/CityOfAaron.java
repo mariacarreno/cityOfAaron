@@ -13,17 +13,35 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 // End imports for CropData test experiment
 import model.*;
+import View.*;
+    
 
 /**
  *
  * @author Usuario, npetersen
  */
 public class CityOfAaron {
+    
+    // variable for keeping a reference to the Game object
+    private static Game theGame = null;
+    public Game getGame() {
+        return this.theGame;
+    }
+
+    public Game setGame(Game _theGame) {
+        return this.theGame = _theGame;
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+            // main function - entry point for the program
+            // runs the main menu
+            MainMenuView mmv = new MainMenuView();
+            mmv.displayMenuView();
+
         
         /* 
          * Create an instance of your Player class. 
