@@ -25,11 +25,11 @@ public class CityOfAaron {
     // variable for keeping a reference to the Game object
     private static Game theGame = null;
     public Game getGame() {
-        return this.theGame;
+        return theGame;
     }
 
-    public Game setGame(Game _theGame) {
-        return this.theGame = _theGame;
+    public static Game setGame(Game _theGame) {
+        return theGame = _theGame;
     }
 
     /**
