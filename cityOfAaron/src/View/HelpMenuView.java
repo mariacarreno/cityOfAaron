@@ -62,7 +62,7 @@ public HelpMenuView()
 {
         theHelpMenu = "\n" +
                    "**********************************\n" +
-                   "* CITY OF AARON: MAIN GAME MENU  *\n" +
+                   "* CITY OF AARON: HELP MENU  *\n" +
                    "**********************************\n" +
                    " 1 - Goals\n" +
                    " 2 - Map Help\n" +
