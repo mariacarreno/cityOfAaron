@@ -88,6 +88,7 @@ public class CropControl {
       //acresOwned = acresOwned + acresToBuy
         int owned1 = cropData.getAcresOwned();
         owned1 += acresToBuy;
+        cropData.setAcresOwned(owned1);
         
       //wheatInStore = wheatInStore – (acresToBuy * landPrice)
           wheat1 -= (acresToBuy * landPrice);
@@ -162,12 +163,12 @@ public class CropControl {
     //Pre-conditions: the city has enough land to plant, the city has enough people to tend the land, there is enough wheat in store to plant the number of acres of land.
 
      
-         public static int plantCrops(int acresPlanted, int wheatInStore, int population1, CropData _cropData){
+         public static int plantCrops(int acresPlanted, int wheatInStore, int population1, CropData cropData){
              
-             int owned = _cropData.getAcresOwned();
+             int owned = cropData.getAcresOwned();
              int planted = acresPlanted;
              int population = population1;
-             int wheat = wheatInStore;
+             int wheat = cropData.getWheatInStore();
          
              
              
@@ -203,6 +204,7 @@ public class CropControl {
         
         //wheatInStore  = wheatInStore - acresPlanted / 2
         wheat = wheat - wheatUsed;
+        cropData.setWheatInStore(wheat);
         return wheat;
 
       }
