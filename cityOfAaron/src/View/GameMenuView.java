@@ -36,7 +36,7 @@ public class GameMenuView {
             System.out.println(theGameMenu);
 
             // Prompt the user and get the user’s input
-            menuOption = getInput();
+            menuOption = getMenuOption();
             
             if (menuOption.equals("Q") || menuOption.equals("")) {
                 return;
@@ -85,7 +85,7 @@ public class GameMenuView {
     // Parameters: none
     // Returns: String - the option selected
     // ===================================       
-    public String getInput() {
+    public String getMenuOption() {
         
         String[] inputs = new String[] {"V", "I", "A", "S", "L", "M", "E", "B", "C", "R", "D", "W", "J", "SG", "H", "Q"};
         
