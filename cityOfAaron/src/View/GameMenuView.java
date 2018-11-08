@@ -62,7 +62,7 @@ public class GameMenuView {
                 + "* CITY OF AARON: GAME MENU  *\n"
                 + "**********************************\n"
                 + " V - View map\n"
-                + " I - View list of items in inventory\n"
+                + " I - View/Print a list\n"
                 + " A - View list of actors\n"
                 + " S - View ship status\n"
                 + " L - View contents of location\n"
@@ -119,8 +119,8 @@ public class GameMenuView {
             case "V":
                 viewMap();
                 break;
-            case "I":
-                viewInventoryItems();
+            case "I": //view lists menu
+                viewList();
                 break;
             case "A":
                 viewActors();
@@ -179,11 +179,12 @@ public class GameMenuView {
     }
 
     // ===================================     
-    public void viewInventoryItems() {
+    public void viewList() {
         // Display Stub.
-        System.out.println("\nDisplay Inventory Items.");
+         ListMenuView lmv = new ListMenuView();
+         lmv.displayMenuView();
     }
-
+  
     // ===================================     
     public void viewActors() {
         // Display Stub.
