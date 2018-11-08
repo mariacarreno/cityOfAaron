@@ -24,7 +24,7 @@ public class ListMenuView {
             " 5 - Return to the Main menu\n";
     private final int MAX = 5;
     private Scanner keyboard = new Scanner(System.in);
-    private Game game = CityOfAaron.getGame();
+    
     
     public ListMenuView () {
         
