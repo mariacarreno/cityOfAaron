@@ -57,7 +57,11 @@ public class CropView {
     public static void displayCropsReportView() {
         
         CropData cropData = new CropData();
+        int currentpo = cropData.getPopulation();
+        int starvedpo = CropControl.calcStarved(cropData);
+        int control;
         
+        control = (50 * currentpo) / 100;
         // The year number
         System.out.println("In year " + cropData.getYear() + ":\n");
         // How many people starved
@@ -69,11 +73,18 @@ public class CropView {
         // The number of acres of crop land owned by the city
         System.out.println("The city now owns " + cropData.getAcresOwned() + " acres of land.\n");
         // The number of bushels per acre in this years harvest 
-        System.out.println("You harvested " + CropControl.harvestCrops() + " bushels of wheat.\n");
+        System.out.println("You harvested " + CropControl.harvestCrops(cropData) + " bushels of wheat.\n");
         // The  total number of bushels of wheat harvested
         System.out.println(CropControl.calcEatenByRats(cropData) + " bushels were eaten by rats.\n");
         // The number of bushels of wheat in store (model)
         System.out.println("You now have " + cropData.getWheatInStore() + " bushels of wheat in store.\n");
+        
+        if (control < starvedpo) {
+        System.out.println("More than 50% of your people is starved, they need to eat!");
+        System.out.println("Thanks for playing ... goodbye.");
+          } else {
+            return;
+        }
     }
  
  

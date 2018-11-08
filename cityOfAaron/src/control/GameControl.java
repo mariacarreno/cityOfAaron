@@ -47,7 +47,7 @@ public class GameControl {
         cropData.setAcresPlanted(1000);
         cropData.setHarvest(3000);
         cropData.setAcresPlanted(1000); 
-        
+        cropData.setWheatForFood(2000);
         game.setCropData(cropData); 
         
         

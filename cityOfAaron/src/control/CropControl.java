@@ -126,6 +126,57 @@ public class CropControl {
      }
      
      /**
+      * The harvestCrops method
+      */
+     public static int harvestCrops(CropData _cropData){
+        int cY = 3;
+        int aH = _cropData.getAcresPlanted();
+        int wheat = _cropData.getWheatInStore();
+        int ht = cY * aH;
+        wheat += ht;
+        _cropData.setWheatInStore(wheat);
+        _cropData.setHarvest(ht);
+        return ht;
+    }
+     
+      /**
+      * The calcEatenByRats method
+      */
+     public static int calcEatenByRats(CropData _cropData) {
+        double rNumber = random.nextDouble();
+        int rD = (int) Math.floor((rNumber * .05) * _cropData.getWheatInStore());
+        _cropData.setWheatInStore(_cropData.getWheatInStore()-rD);
+        return rD;
+    } 
+     
+     /**
+      * The growPopulation method
+      */
+     public static int growPopulation(CropData _cropData) {
+        double rNumber = random.nextDouble();
+        //round down a random growth number of population
+        int pG = (int) Math.floor((rNumber * .05) * _cropData.getPopulation());
+        _cropData.setNewPeople(pG);
+        return _cropData.getNewPeople();
+    }
+     
+     /**
+      * The calcStarved method
+      */
+     public static int calcStarved(CropData _cropData) {
+        int pF = (int) Math.floor(_cropData.getWheatForFood()/20);
+        if ( _cropData.getPopulation() > pF ) {
+            _cropData.setNumberWhoDied(_cropData.getPopulation()-pF);
+           }
+        else
+        {
+            _cropData.setNumberWhoDied(0);
+        }
+        //return population growth - could be 0/-1
+        return _cropData.getNumberWhoDied();
+    }
+     
+     /**
       * The setOffering method
       * Purpose: Set the offering percentage
       * @param _offeringPercentage the offering percentage
