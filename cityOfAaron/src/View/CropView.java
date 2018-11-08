@@ -48,7 +48,33 @@ public class CropView {
      System.out.format("You now own " + cropData.getAcresOwned() + " acres of land. ");
 }
 
- 
+  /**
+     * displayCropsReportView method
+     * purpose: display annual report
+     * parameters: none
+     * returns: none
+     */
+    public static void displayCropsReportView() {
+        
+        CropData cropData = new CropData();
+        
+        // The year number
+        System.out.println("In year " + cropData.getYear() + ":\n");
+        // How many people starved
+        System.out.println(CropControl.calcStarved(cropData) + " People starved.\n");
+        // How many people came to the city
+        System.out.println(CropControl.growPopulation(cropData) + " people came to the city.\n");
+        // The current population
+        System.out.println("The current population is " + cropData.getPopulation() + ". \n");
+        // The number of acres of crop land owned by the city
+        System.out.println("The city now owns " + cropData.getAcresOwned() + " acres of land.\n");
+        // The number of bushels per acre in this years harvest 
+        System.out.println("You harvested " + CropControl.harvestCrops() + " bushels of wheat.\n");
+        // The  total number of bushels of wheat harvested
+        System.out.println(CropControl.calcEatenByRats(cropData) + " bushels were eaten by rats.\n");
+        // The number of bushels of wheat in store (model)
+        System.out.println("You now have " + cropData.getWheatInStore() + " bushels of wheat in store.\n");
+    }
  
  
  // The sellLandView method
@@ -117,7 +143,8 @@ public static void runCropView()
     
     sellLandView();
     feedPeopleView();
-
+    displayCropsReportView();
+    plantCropsView();
     
     
 }
