@@ -15,7 +15,7 @@ import control.*;
 public class ListMenuView {
      private String listMenu = "\n" +
             "*********************************\n" +
-            "** CITY OF AARON: IN-LIST MENU **\n" +
+            "** CITY OF AARON: LIST MENU **\n" +
             "*********************************\n" +
             " 1 - List the animals in the storehouse\n" +
             " 2 - List the tools in the storehouse\n" +
@@ -25,6 +25,7 @@ public class ListMenuView {
     private final int MAX = 5;
     private Scanner keyboard = new Scanner(System.in);
     private Game game = CityOfAaron.getGame();
+    
     public ListMenuView () {
         
     }
