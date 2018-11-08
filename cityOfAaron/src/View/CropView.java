@@ -121,6 +121,40 @@ public static void runCropView()
     
     
 }
+
+
+// The plantCropsView method()
+// Purpose: runs the methods to plant crops.
+// Parameters: none
+// Returns: none
+public static void plantCropsView() {
+    
+    CropData cropData = new CropData();
+    int acresToPlant;
+    int availableAcres = cropData.getAcresOwned();
+    int availablePeople = cropData.getPopulation();
+    int wheatInStore = cropData.getWheatInStore();
+    
+    // Prompt the user to enter the number of acres to plant
+    System.out.println("\nHow many acres of land do you want to plant?"); 
+    
+    // Get the user's input and save it
+    acresToPlant = keyboard.nextInt();
+    
+    if (acresToPlant < 1) {
+        System.out.format("\nYou entered " + acresToPlant + ". Please enter a valid number of acres to plant.");
+    } else {
+        if (availableAcres >= acresToPlant) {
+            cropData.setAcresPlanted(acresToPlant);
+        } else {
+            System.out.format("\nThe city has " + availableAcres + " acres available for planting. Please enter a value less than or equal to " + availableAcres + ".");
+        }
+    }
+    
+    
+    
+    
+}
     
     
     
