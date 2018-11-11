@@ -20,8 +20,8 @@ public class CropView {
  private static Scanner keyboard = new Scanner(System.in);   
      
  // Get references to the Game object and the CropData object
- //*****static private Game game = CityOfAaron.getGame();
- //*****static private CropData cropData = game.getCropData();
+ private static Game game = CityOfAaron.getGame();
+ private static CropData cropData = game.getCropData();
 
  // The buyLandView method
  // Purpose: interface with the user input for buying land
@@ -167,7 +167,6 @@ public static void runCropView()
 // Returns: none
 public static void plantCropsView() {
     
-    CropData cropData = new CropData();
     int acresToPlant;
     int availableAcres = cropData.getAcresOwned();
     int availablePeople = cropData.getPopulation();
@@ -179,21 +178,12 @@ public static void plantCropsView() {
     // Get the user's input and save it
     acresToPlant = keyboard.nextInt();
     
-    if (acresToPlant < 1) {
-        System.out.format("\nYou entered " + acresToPlant + ". Please enter a valid number of acres to plant.");
-    } else {
-        if (availableAcres >= acresToPlant) {
-            cropData.setAcresPlanted(acresToPlant);
-        } else {
-            System.out.format("\nThe city has " + availableAcres + " acres available for planting. Please enter a value less than or equal to " + availableAcres + ".");
-        }
-    }
+    // Plant the crops
+    cropData.setAcresPlanted(acresToPlant);
     
-    
-    
+    // output how many acres were planted
+    System.out.format("You have planted " + acresToPlant + " acres.");
     
 }
-    
-    
     
 }
