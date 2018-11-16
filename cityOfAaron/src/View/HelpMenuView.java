@@ -1,8 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The MainMenuView class - part of the view layer
+ * Object of this class manages the main menu
+ * CIT 260
+ * Spring 2018
+ * Team members: Nate Petersen, Rhett McDermott, María Carreño.
+ * Date last modified: Nov 2018
  */
+//-------------------------------------------------------------
 package View;
 
 import java.util.Scanner;
@@ -15,43 +19,12 @@ import control.*;
  *
  * @author Rhett
  */
-public class HelpMenuView {
+public class HelpMenuView extends MenuView {
     
-    private String theHelpMenu;
-    private int max;
     int userInput = 0;
     final int MAX = 5;
 
     
-    Scanner keyboard = new Scanner(System.in);
-
-    // The displayMenuView method
-    // Purpose: displays the menu, gets the user's input, and does the 
-    //               selected action
-    // Parameters: none
-    // Returns: none
-    // =========================================================    
-    public void displayMenuView()
-    {
-        int menuOption;
-    do
-    {
-        // Display the menu
-        System.out.println(theHelpMenu);
-
-        // Prompt the user and get the user’s input
-        menuOption = getMenuOption();
-
-        // Perform the desired action
-        doAction(menuOption);
-
-    } while (menuOption != max);
-
- 
-    }
-
-
-
 
 // The MainMenuView constructor
 // Purpose: Initialize the menu data
@@ -60,7 +33,7 @@ public class HelpMenuView {
 // ===================================
 public HelpMenuView()
 {
-        theHelpMenu = "\n" +
+        super("\n" +
                    "**********************************\n" +
                    "* CITY OF AARON: HELP MENU  *\n" +
                    "**********************************\n" +
@@ -68,33 +41,10 @@ public HelpMenuView()
                    " 2 - Map Help\n" +
                    " 3 - Move Help\n" +
                    " 4 - List Help\n" +
-                   " 5 - Return to Main Menu\n";
-        
-        max = 5;
-}
-
-
- // The getMenuOption method
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    // ===================================       
-    public int getMenuOption()
-    {
- 
-          do
-{
-         // get user input from the keyboard
-         userInput = keyboard.nextInt();
-         // if it is not a valid value, output an error message
-         if(userInput < 1 || userInput > MAX)
-              System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-        // loop back to the top of the loop if input was not valid
-// end loop
-} while (userInput < 1 || userInput > MAX);
-
-        return userInput;
+                   " 5 - Return to Main Menu\n", 
+                5);
     }
+
 
 
  // The doAction method
