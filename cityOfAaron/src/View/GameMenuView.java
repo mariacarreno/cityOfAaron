@@ -5,21 +5,14 @@
  */
 package View;
 
-import java.util.Scanner;
-import java.util.Arrays;
-import cityofaaron.CityOfAaron;
-import control.*;
-
 /**
  *
  * @author Nate Petersen
  */
-public class GameMenuView {
+public class GameMenuView extends MenuView {
 
-    private final String theGameMenu;
-    private final int max = 5;
     int userInput = 0;
-    Scanner keyboard = new Scanner(System.in);
+    final int MAX = 5;
 
     
     // The GameMenuView constructor
@@ -28,7 +21,7 @@ public class GameMenuView {
     // Returns: none
     // ===================================
     public GameMenuView() {
-        theGameMenu = "\n"
+        super("\n"
                 + "**********************************\n"
                 + "* CITY OF AARON: GAME MENU  *\n"
                 + "**********************************\n"
@@ -36,58 +29,7 @@ public class GameMenuView {
                 + " 2 - View/Print a List\n"
                 + " 3 - Move to a New Location\n"
                 + " 4 - Manage the Crops\n"
-                + " 5 - Return to the Main Menu\n";
-    }
-    
-
-    // The displayMenuView method
-    // Purpose: displays the menu, gets the user's input, and does the 
-    // selected action
-    // Parameters: none
-    // Returns: none
-    // =========================================================
-    public void displayMenuView() {
-        
-        int menuOption;
-        
-        do {
-            // Display the menu
-            System.out.println(theGameMenu);
-
-            // Prompt the user and get the user’s input
-            menuOption = getMenuOption();
-
-            // Perform the desired action
-            doAction(menuOption);
-        
-        } while (menuOption != max);
-    
-    }
-    
-
-    // The getInputs method
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: int - the option selected
-    // ===================================       
-    public int getMenuOption() {
-        
-        do {
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            
-            // if it is not a valid value, output an error message
-            if (userInput < 1 || userInput > max) {
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-            }
-
-            // loop back to the top of the loop if input was not valid
-
-            // end loop
-        } while (userInput < 1 || userInput > max);
-
-        return userInput;
-        
+                + " 5 - Return to the Main Menu\n", 5);
     }
     
 
