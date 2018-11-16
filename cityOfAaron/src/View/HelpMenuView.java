@@ -13,7 +13,7 @@ import control.*;
    
 /**
  *
- * @author Rhett
+ * @author Rhettv
  */
 public class HelpMenuView {
     
