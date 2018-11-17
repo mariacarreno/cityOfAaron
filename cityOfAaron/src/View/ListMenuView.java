@@ -4,62 +4,29 @@
  * and open the template in the editor.
  */
 package View;
-import cityofaaron.CityOfAaron;
-import java.util.Scanner;
-import model.*;
-import control.*;
+
 /**
  *
- * @author Usuario
+ * @author Maria Rosa
  */
-public class ListMenuView {
-     private String listMenu = "\n" +
-            "*********************************\n" +
-            "** CITY OF AARON: LIST MENU **\n" +
-            "*********************************\n" +
-            " 1 - List the animals in the storehouse\n" +
-            " 2 - List the tools in the storehouse\n" +
-            " 3 - List the provisions in the storehouse\n" +
-            " 4 - List the Developers\n" +
-            " 5 - Return to the Main menu\n";
-    private final int MAX = 5;
-    private Scanner keyboard = new Scanner(System.in);
+public class ListMenuView extends MenuView {
     
-    
+    int userInput = 0;
+    final int MAX = 5;
+   
     public ListMenuView () {
-        
+     super("\n" 
+           + "*********************************\n" 
+           +"** CITY OF AARON: LIST MENU **\n" 
+           +"*********************************\n" 
+           +" 1 - List the animals in the storehouse\n" 
+           +" 2 - List the tools in the storehouse\n" 
+           +" 3 - List the provisions in the storehouse\n" 
+           +" 4 - List the Developers\n" 
+           +" 5 - Return to the Main menu\n",5);
+           
     }
-    
-    /**
-     * Purpose: Display the menuView
-     */
-    public void displayMenuView() {
-        int menuOption = 0;
-       
-        do {
-            System.out.println(listMenu);
-            menuOption = getMenuOption();
-            doAction(menuOption);            
-        } while (menuOption != MAX);
-    }
-
-    /**
-     * Purpose: To collect user input
-     * @return User selected menu option as int
-     */
-    public int getMenuOption() {
-        int userInput = 0;
-        // Loop to check for proper input from the user
-        do {
-            userInput = keyboard.nextInt();
-            if (userInput < 0 || userInput > MAX)
-            {
-                System.out.println("Error, please enter an option 1 to 5\n");
-            }
-        } while (userInput < 0 || userInput > MAX);
-        return userInput;
-    }
-    
+      
     /**
      * Purpose: To perform the player's desired action
      */
