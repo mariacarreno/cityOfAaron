@@ -20,6 +20,8 @@ public class CropData {
     private int cropYield;
     private int wheatInStore;
     private int numberWhoDied;
+    private int offering;
+    private int offeringBushels;
     private int newPeople;
     private int harvest;
     private int wheatForFood;
@@ -74,6 +76,22 @@ public class CropData {
 
     public void setNumberWhoDied(int _numberWhoDied) {
         this.numberWhoDied = _numberWhoDied;
+    }
+    
+    public int getOffering() {
+        return offering;
+    }
+
+    public void setOffering(int offering) {
+        this.offering = offering;
+    }
+
+    public int getOfferingBushels() {
+        return offeringBushels;
+    }
+
+    public void setOfferingBushels(int offeringBushels) {
+        this.offeringBushels = offeringBushels;
     }
 
     public int getNewPeople() {

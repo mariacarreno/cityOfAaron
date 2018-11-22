@@ -66,9 +66,11 @@ public class GameMenuView extends MenuView {
     }
     
 
-    // ===================================     
+    // The viewList method
+    // Purpose: Creates a ListMenuView object and calls its displayMenu() method
+    // Parameters: none
+    // Returns: none
     public void viewList() {
-        // Display Stub.
         ListMenuView lmv = new ListMenuView();
         lmv.displayMenuView();
     }
