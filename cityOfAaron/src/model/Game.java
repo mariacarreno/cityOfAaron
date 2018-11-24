@@ -7,6 +7,8 @@
 
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author npetersen
@@ -16,6 +18,9 @@ public class Game {
     private Player thePlayer;
     private CropData theCropData;
     private Map map;
+    private ArrayList<String> theTools;
+ 
+    
     
     public Game() {}
     
@@ -41,6 +46,24 @@ public class Game {
 
     public void setMap(Map _map) {
         this.map = _map;
+    } 
+    
+    
+    public ArrayList<String> getTool() {
+        return theTools;
     }    
+    
+    public void setTool(ArrayList<String> _theTools) {
+        this.theTools = _theTools;
+    }
+
+ 
+    
+  
+
+
+  
+    
+    
     
 }

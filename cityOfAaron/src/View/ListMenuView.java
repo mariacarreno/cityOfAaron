@@ -5,6 +5,14 @@
  */
 package View;
 
+
+import model.*;
+import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
+import control.*;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  *
  * @author Maria Rosa
@@ -59,8 +67,21 @@ public class ListMenuView extends MenuView {
     /**
      * Purpose: Display the list of tools that the player has
      */
+    
     public void listTools() {
-        System.out.println("Display a list of tools here");
+        
+   Game game = new Game();
+ 
+  ArrayList<String> tools = game.getTool();
+        
+
+  System.out.println("Tools in the City of Aaron");
+  
+      for (int counter = 0; counter < tools.size(); counter++) { 		      
+          System.out.println(tools.get(counter)); 		
+      }  
+ 
+ 
     }
 
     /**
@@ -76,4 +97,6 @@ public class ListMenuView extends MenuView {
     public void listTeam() {
         System.out.println("Display the team members here");
     }
+
+   
 }

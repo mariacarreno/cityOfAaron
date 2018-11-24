@@ -11,6 +11,8 @@ package control;
 
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -42,6 +44,8 @@ public class GameControl {
         createCropDataObject();
         
         createMap();
+        
+        createToolsList();
 
   
    // Save a reference to the Game object in the static variable
@@ -149,7 +153,27 @@ public class GameControl {
             
         }
         
+             public static void createToolsList()
+      
+    {
+        Game toolList = new Game();
+
+        // Creating an ArrayList of String
+        ArrayList<String> tool = new ArrayList<>();
+
+        // Adding new elements to the ArrayList
         
+        tool.add("Water wheel");
+        tool.add("Axe");
+        tool.add("Plow");
+        tool.add("Wind mill");
+  
+       
+        game.setTool(tool);
+
+    }
+
+ 
         
 
 }

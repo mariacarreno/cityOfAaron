@@ -12,6 +12,10 @@ public class ListItem {
     
     private String name;
     private int number;
+
+    public ListItem(String manti, int i) {
+        
+    }
     
     
     public String getName() {
