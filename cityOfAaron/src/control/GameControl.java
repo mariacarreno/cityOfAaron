@@ -161,20 +161,18 @@ public class GameControl {
              public static void createToolsList()
       
     {
-        Game toolList = new Game();
 
-        // Creating an ArrayList of String
-        ArrayList<String> tool = new ArrayList<>();
+        // Create an ArrayList called tools
+        ArrayList<ListItem> tools = new ArrayList<>(); 
 
         // Adding new elements to the ArrayList
         
-        tool.add("Water wheel");
-        tool.add("Axe");
-        tool.add("Plow");
-        tool.add("Wind mill");
-  
-       
-        game.setTool(tool);
+        tools.add(new ListItem("Water wheel",1));
+        tools.add(new ListItem("Axe",20));
+        tools.add(new ListItem("Plow",5));
+        tools.add(new ListItem("Wind mill",2));
+        
+        game.setTool(tools);
 
     }
 

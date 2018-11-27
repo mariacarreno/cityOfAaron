@@ -18,7 +18,7 @@ public class Game {
     private Player thePlayer;
     private CropData theCropData;
     private Map map;
-    private ArrayList<String> theTools;
+    private ArrayList<ListItem> tools;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> provisions;
  
@@ -50,14 +50,19 @@ public class Game {
         this.map = _map;
     } 
     
+ 
     
-    public ArrayList<String> getTool() {
-        return theTools;
-    }    
-    
-    public void setTool(ArrayList<String> _theTools) {
-        this.theTools = _theTools;
+    public ArrayList<ListItem> getTool() {
+        return this.tools;
     }
+
+    public void setTool(ArrayList<ListItem> _tools) {
+        this.tools = _tools;
+    }
+    
+    
+    
+    
 
     public ArrayList<ListItem> getAnimals() {
         return this.animals;

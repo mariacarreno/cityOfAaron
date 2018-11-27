@@ -76,15 +76,14 @@ public class ListMenuView extends MenuView {
      */
     
     public void listTools() {
- 
-  ArrayList<String> tools = game.getTool();
+ ArrayList<ListItem> tools = game.getTool(); 
         
 
   System.out.println("Tools in the City of Aaron");
   
-      for (int counter = 0; counter < tools.size(); counter++) { 		      
-          System.out.println(tools.get(counter)); 		
-      }  
+          for (ListItem tool: tools) {
+            System.out.println(tool.getName() + "\t" + tool.getNumber());
+        }
  
  
     }
