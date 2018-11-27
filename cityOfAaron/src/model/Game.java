@@ -19,6 +19,7 @@ public class Game {
     private CropData theCropData;
     private Map map;
     private ArrayList<String> theTools;
+    private ArrayList<ListItem> animals;
  
     
     
@@ -57,7 +58,13 @@ public class Game {
         this.theTools = _theTools;
     }
 
- 
+    public ArrayList<ListItem> getAnimals() {
+        return this.animals;
+    }
+
+    public void setAnimals(ArrayList<ListItem> _animals) {
+        this.animals = _animals;
+    }
     
   
 

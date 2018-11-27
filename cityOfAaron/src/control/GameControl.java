@@ -47,6 +47,8 @@ public class GameControl {
         
         createToolsList();
 
+        // Create the list of animals
+        createAnimalList();
   
    // Save a reference to the Game object in the static variable
    
@@ -173,7 +175,26 @@ public class GameControl {
 
     }
 
- 
+ /**
+     * Purpose: Create an ArrayList of Animals
+    
+     */
+       public static void createAnimalList() {
+        // Create an ArrayList called animals
+        ArrayList<ListItem> animals = new ArrayList<>(); 
+        
+        // Add new elements to the arraylist
+        animals.add(new ListItem("Cow",20));
+        animals.add(new ListItem("Chikens",20));
+        animals.add(new ListItem("Deer",20));
+        animals.add(new ListItem("Horses",20));
+        animals.add(new ListItem("Pig",20));
+        
+        // Set the animal list to the game object
+        game.setAnimals(animals);
+        
+    }
+             
         
 
 }

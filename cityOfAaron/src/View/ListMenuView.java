@@ -21,6 +21,7 @@ public class ListMenuView extends MenuView {
     
     int userInput = 0;
     final int MAX = 5;
+    private Game game = CityOfAaron.getGame();
    
     public ListMenuView () {
      super("\n" 
@@ -61,7 +62,13 @@ public class ListMenuView extends MenuView {
      * Purpose: Display the list of animals that the player has
      */
     public void listAnimals() {
+        ArrayList<ListItem> animals = game.getAnimals();     
+        
         System.out.println("Display a list of animals here");
+        
+        for (ListItem animal: animals) {
+            System.out.println(animal.getName() + "\t" + animal.getNumber());
+        }
     }
     
     /**

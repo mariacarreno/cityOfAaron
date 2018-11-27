@@ -16,8 +16,7 @@ public class ListItem {
     public ListItem(String manti, int i) {
         
     }
-    
-    
+            
     public String getName() {
         return this.name;
     }    
