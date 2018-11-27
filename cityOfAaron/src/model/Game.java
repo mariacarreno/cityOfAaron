@@ -20,6 +20,7 @@ public class Game {
     private Map map;
     private ArrayList<String> theTools;
     private ArrayList<ListItem> animals;
+    private ArrayList<ListItem> provisions;
  
     
     
@@ -64,6 +65,14 @@ public class Game {
 
     public void setAnimals(ArrayList<ListItem> _animals) {
         this.animals = _animals;
+    }
+    
+    public ArrayList<ListItem> getProvisions() {
+        return provisions;
+    }
+
+    public void setProvisions(ArrayList<ListItem> provisions) {
+        this.provisions = provisions;
     }
     
   

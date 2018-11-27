@@ -76,8 +76,6 @@ public class ListMenuView extends MenuView {
      */
     
     public void listTools() {
-        
-   Game game = new Game();
  
   ArrayList<String> tools = game.getTool();
         
@@ -92,10 +90,17 @@ public class ListMenuView extends MenuView {
     }
 
     /**
-     * Purpose: Display the list the provisions that the player has
+     * Purpose: Display the list of the provisions that the player has
 */
     public void listProvisions() {
-        System.out.println("Display a list of provisions here");
+        
+        ArrayList<ListItem> provisions = game.getProvisions();
+        System.out.println("\nCity of Aaron Provisions in the Storehouse");
+        
+        for (ListItem provision : provisions) {
+            System.out.println(provision.getName() + "\t" + provision.getNumber());
+        }
+        
     }
     
     /**

@@ -49,6 +49,9 @@ public class GameControl {
 
         // Create the list of animals
         createAnimalList();
+        
+        // Create the list of provisions
+        createProvisionsList();
   
    // Save a reference to the Game object in the static variable
    
@@ -194,6 +197,21 @@ public class GameControl {
         game.setAnimals(animals);
         
     }
+       
+       
+       public static void createProvisionsList() {
+           
+           ArrayList<ListItem> provisions = new ArrayList<>();
+           
+           provisions.add(new ListItem("flour", 5));
+           provisions.add(new ListItem("salt", 3));
+           provisions.add(new ListItem("clothing", 8));
+           provisions.add(new ListItem("shoes", 20));
+           provisions.add(new ListItem("seeds", 200));
+           
+           game.setProvisions(provisions);
+       
+       }
              
         
 
