@@ -197,6 +197,10 @@ public class GameControl {
     }
        
        
+       /**
+        * @author npetersen
+        * Create an ArrayList of provisions
+        */
        public static void createProvisionsList() {
            
            ArrayList<ListItem> provisions = new ArrayList<>();

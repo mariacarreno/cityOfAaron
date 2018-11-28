@@ -89,8 +89,9 @@ public class ListMenuView extends MenuView {
     }
 
     /**
+     * @author npetersen
      * Purpose: Display the list of the provisions that the player has
-*/
+     */
     public void listProvisions() {
         
         ArrayList<ListItem> provisions = game.getProvisions();
