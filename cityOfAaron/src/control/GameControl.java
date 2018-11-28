@@ -207,7 +207,7 @@ public class GameControl {
            
            provisions.add(new ListItem("flour", 5));
            provisions.add(new ListItem("salt", 3));
-           provisions.add(new ListItem("clothing", 8));
+           provisions.add(new ListItem("pelts", 8));
            provisions.add(new ListItem("shoes", 20));
            provisions.add(new ListItem("seeds", 200));
            

@@ -13,8 +13,9 @@ public class ListItem {
     private String name;
     private int number;
 
-    public ListItem(String manti, int i) {
-        
+    public ListItem(String _name, int _number) {
+        name = _name;
+        number = _number;
     }
             
     public String getName() {
