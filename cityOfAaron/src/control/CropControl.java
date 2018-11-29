@@ -11,6 +11,7 @@ package control;
 import java.util.Random;
 import java.util.Scanner;
 import model.*;
+import exceptions.*;
 
 public class CropControl {
  
@@ -71,19 +72,19 @@ public class CropControl {
    //Returns: the amount of wheatInStore left after the sale.
    //Pre-conditions: the number of wheatInStore is greater than or equal to landPrice times acresToBuy.
     
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
+    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException
     {
       //landPrice = random number generated between 17 and 27
       //acresToBuy = number entered by user
       //if acresToBuy < 0, return -1
         if(acresToBuy < 0)
-              return -1;
+              throw new CropException("A negative value was input");
         
       //if acresToBuy * landPrice > wheatInStore, return -1
        int acresland = acresToBuy * landPrice;
        int wheat1 = cropData.getWheatInStore();
         if(acresland > wheat1)
-              return -1;
+              throw new CropException("There is insufficient wheat to buy this much land");
         
       //acresOwned = acresOwned + acresToBuy
         int owned1 = cropData.getAcresOwned();
