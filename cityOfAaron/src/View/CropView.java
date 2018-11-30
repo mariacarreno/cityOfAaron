@@ -31,7 +31,7 @@ public class CropView {
  public static void buyLandView()
  {
      int price = CropControl.calcLandCost();
-     System.out.format("Land is selling for %d bushels per acre. %n", price);
+     System.out.format("\n\nLand is selling for %d bushels per acre. %n", price);
      int toBuy;
      boolean paramsNotOkay;
      
@@ -102,7 +102,7 @@ public class CropView {
      int price = CropControl.calcLandCost();
 
      // Prompt the user to enter the number of acres to sell
-     System.out.format("Land is selling for " + price + " bushels per acre.%n");
+     System.out.format("\n\nLand is selling for " + price + " bushels per acre.%n");
     int toSell;
      boolean paramsNotOkay;
      
@@ -134,22 +134,29 @@ public class CropView {
  public static void feedPeopleView()
  {
      // Get how much wheat you have.
-     CropData cropData = new CropData();
      int WheatInStore = cropData.getWheatInStore();
 
      // Prompt the user to enter the number of wheat to save
-     System.out.format("You have " + WheatInStore + " bushels of wheat in store.%n");
-     System.out.print("\nHow many bushels of wheat to you want to set aside for feeding people? "); 
+     System.out.format("\n\nYou have " + WheatInStore + " bushels of wheat in store.%n");
+          int savedWheat;
+     boolean paramsNotOkay;
+     
+     do {
+         paramsNotOkay = false;
+     System.out.print("\nHow many bushels of wheat to you want to set aside for feeding people? ");
+              savedWheat = keyboard.nextInt();
+         try {
+             CropControl.feedPeople(savedWheat, cropData);
+         } catch(CropException e) {
+             System.out.println("I am sorry master, I cannot do this.");
+             System.out.println(e.getMessage());
+             paramsNotOkay = true;
+         }
+     } while(paramsNotOkay);
 
-    //  Get the user’s input and save it.
-    int savedWheat;
-    savedWheat = keyboard.nextInt();
-
-    // Call the feedPeople( ) method in the control layer to buy the land
-    CropControl.feedPeople(savedWheat, cropData);
-    
     // output how much wheat we now have
      System.out.format("You now have " + cropData.getWheatInStore() + " bushels of wheat in store. ");
+
 } 
  
 // The runCropView method()

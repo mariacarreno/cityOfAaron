@@ -88,6 +88,7 @@ public class GameMenuView extends MenuView {
         // Display Stub.
         CropView.buyLandView();
         CropView.sellLandView();
+        CropView.feedPeopleView();
     }
 
 }
