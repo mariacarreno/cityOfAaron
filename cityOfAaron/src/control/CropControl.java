@@ -210,14 +210,14 @@ public class CropControl {
      
      
      
-     //The plantCrops method
+    //The plantCrops method
     //purpose: To allocate seed for next years crops.
     //Parameters: the acres of land planted, the number of wheat in store, and a reference to a CropData object.
     //Returns: the number of acres planted and the amount of wheat left in storage.
     //Pre-conditions: the city has enough land to plant, the city has enough people to tend the land, there is enough wheat in store to plant the number of acres of land.
 
      
-         public static int plantCrops(int acresPlanted, int wheatInStore, int population1, CropData cropData){
+         public static int plantCrops(int acresPlanted, int wheatInStore, int population1, CropData cropData) throws CropException {
              
              int owned = cropData.getAcresOwned();
              int planted = acresPlanted;
@@ -237,20 +237,20 @@ public class CropControl {
         
         //acresPlanted > 0
         if(planted < 0)
-              return -1;        
+              throw new CropException("A negative value was input.");        
         
         //acresOwned >= acresPlanted
         if(owned < planted)
-            return -1;
+            throw new CropException("You don't own enough acres to plant your desired amount.");
         
         //population >= acresPlanted / 10
         int chk = planted / 10;
         if(population < chk)
-            return -1;        
+            throw new CropException("The amount you want to plant is too much for the population.");        
         
         //wheatInStore >= acresPlanted / 2
          if(wheat < planted / 2)
-            return -1;         
+            throw new CropException("Wheat in store is less than the acres planted.");         
         
         
         //acresPlanted / 2

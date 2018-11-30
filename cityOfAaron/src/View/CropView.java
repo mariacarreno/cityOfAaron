@@ -190,12 +190,26 @@ public static void plantCropsView() {
     int availableAcres = cropData.getAcresOwned();
     int availablePeople = cropData.getPopulation();
     int wheatInStore = cropData.getWheatInStore();
+    boolean paramsNotOkay;
     
-    // Prompt the user to enter the number of acres to plant
-    System.out.println("\nHow many acres of land do you want to plant?"); 
-    
-    // Get the user's input and save it
-    acresToPlant = keyboard.nextInt();
+    do {
+        
+        paramsNotOkay = false;
+        // Prompt the user to enter the number of acres to plant
+        System.out.println("\nHow many acres of land do you want to plant?");
+        
+        // Get the user's input and save it
+        acresToPlant = keyboard.nextInt();
+        
+        try {
+            CropControl.plantCrops(acresToPlant, wheatInStore, availablePeople, cropData);
+        } catch(CropException e) {
+            System.out.println("I am sorry master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+        
+    } while(paramsNotOkay);
     
     // Plant the crops
     cropData.setAcresPlanted(acresToPlant);
