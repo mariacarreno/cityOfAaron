@@ -87,6 +87,7 @@ public class GameMenuView extends MenuView {
     public void manageCrops() {
         // Display Stub.
         CropView.buyLandView();
+        CropView.sellLandView();
     }
 
 }
