@@ -8,12 +8,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
  * @author npetersen
  */
-public class Game {
+public class Game implements Serializable {
     
     private Player thePlayer;
     private CropData theCropData;

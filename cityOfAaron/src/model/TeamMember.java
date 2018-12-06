@@ -7,12 +7,14 @@
 
 package model;
 
+import java.io.*;
+
 /**
  *
  * @author npetersen
  */
 
-public enum TeamMember {
+public enum TeamMember implements Serializable {
     
     TEAMMEMBER1("Maria Carreno", "Developer 1"),
     TEAMMEMBER2("Nate Petersen", "Developer 2"),

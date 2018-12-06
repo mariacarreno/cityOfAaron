@@ -13,13 +13,14 @@ import model.*;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 
 /**
  *
  * @author Rhett
  */
-public class GameControl {
+public class GameControl implements Serializable {
     
     // Size of the Locations array
     private static final int MAX_ROW = 5;
@@ -214,7 +215,29 @@ public class GameControl {
            game.setProvisions(provisions);
        
        }
-             
+       
+       public static void saveGame() {
+           
+       }
+       
+       // the getSavedGame method
+       // Purpose: load a saved game from disk
+       // Parameters: the file path
+       // Returns: none
+       // Side Effect: the game reference in the driver is updated
+       public static void getSavedGame(String filePath) {
+           
+           Game theGame = null;
+           
+           try (FileInputStream fips = new FileInputStream(filePath)) {
+               ObjectInputStream input = new ObjectInputStream(fips);
+               theGame = (Game) input.readObject();
+               CityOfAaron.setGame(theGame);
+           } catch (Exception e) {
+               System.out.println("\nThere was an error reading the saved game file");
+           }
+           
+       }
         
 
 }

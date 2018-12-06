@@ -7,11 +7,13 @@
 
 package model;
 
+import java.io.*;
+
 /**
  *
  * @author npetersen
  */
-public class Player {
+public class Player implements Serializable {
     
     private String name;
     

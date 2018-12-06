@@ -12,6 +12,7 @@ package View;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import control.*;
+import java.io.*;
 
 
 /**
@@ -65,7 +66,7 @@ public MainMenuView()
                 displayHelpMenuView();
                 break;
             case 4: // save game
-                displaySaveGameView();
+                saveGame();
                 break;
             case 5:
                 System.out.println("Thanks for playing ... goodbye.");
@@ -100,14 +101,37 @@ public MainMenuView()
 
     }
 
-     // The startSavedGame method
+    // The startSavedGame method
     // Purpose: creates game object and saves the game
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void startSavedGame( )
-    {
-         System.out.println("\nStart saved game selected.");
+    public void startSavedGame() {
+        // Get rid of nl character left in the stream
+        
+        // prompt user to get a file path
+        System.out.println("\nPlease type the saved game's file name: ");
+        String filePath = keyboard.next();
+        
+        try {
+            FileInputStream fips = new FileInputStream(filePath);
+            ObjectInputStream input = new ObjectInputStream(fips);
+        } catch (FileNotFoundException e1) {
+            System.out.println("\nWe can't find that file. Please try again.");
+        } catch (IOException e2) {
+            System.out.println("\nThere was as problem with the file you selected. Please try again.");
+        }
+        
+        
+        // call the getSavedGame() method in the GameControl class to load the game
+        GameControl.getSavedGame(filePath);
+        
+        // display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenuView();
+        
+        
+        //System.out.println("\nStart saved game selected.");
     }
 
      // The displayHelpMenuView method
@@ -131,9 +155,22 @@ public MainMenuView()
     // Parameters: none
     // Returns: none
     // ===================================     
-    public void displaySaveGameView( )
+    public void saveGame()
     {
-         System.out.println("\nDisplay savegame view selected.");
+         System.out.println("\nPlease enter a file name for your saved game");
+         
+         // prompt user to get a file path
+        String filePath = keyboard.next();
+        
+        try {
+            FileOutputStream fops = new FileOutputStream(filePath);
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(CityOfAaron.getGame());
+        } catch (Exception e) {
+            System.out.println("\nThere was a problem saving your game file. Please try again.");
+            System.out.print(e);
+            System.out.println(e.getStackTrace());
+        } 
     }    
     
 }

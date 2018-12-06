@@ -5,10 +5,13 @@
  * Team members: Nate Petersen, Rhett McDermott, María Carreño.
  */
 package model;
+
+import java.io.*;
+
 /**
  * @author Rhett McDermott 
  */
-public class ListItem {
+public class ListItem implements Serializable {
     
     private String name;
     private int number;

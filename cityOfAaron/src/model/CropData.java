@@ -7,12 +7,14 @@
 
 package model;
 
+import java.io.*;
+
 /**
  *
  * @author npetersen
  */
 
-public class CropData {
+public class CropData implements Serializable {
     
     private int year;
     private int population;

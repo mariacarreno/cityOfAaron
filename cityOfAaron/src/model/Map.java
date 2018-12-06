@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.*;
+
 /**
  *
  * @author Nate Petersen
  */
-public class Map {
+public class Map implements Serializable {
     
     private int rowCount;
     private int colCount;
