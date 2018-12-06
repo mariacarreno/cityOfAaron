@@ -216,10 +216,6 @@ public class GameControl implements Serializable {
        
        }
        
-       public static void saveGame() {
-           
-       }
-       
        // the getSavedGame method
        // Purpose: load a saved game from disk
        // Parameters: the file path
