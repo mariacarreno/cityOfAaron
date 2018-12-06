@@ -9,6 +9,7 @@ package View;
 import model.*;
 import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
+import java.io.*;
 import control.*;
 import java.util.Iterator;
 import java.util.List;
@@ -95,7 +96,7 @@ public class ListMenuView extends MenuView {
     public void listProvisions() {
         
         ArrayList<ListItem> provisions = game.getProvisions();
-        System.out.println("\nDo you want to view the provisions list or print the provisions list?\nType 1 to view the list, Type 2 to print the list.");
+        System.out.println("\nDo you want to view the provisions list or print the provisions list?\nEnter 1 to view the list\nEnter 2 to print the list.");
         switch(keyboard.next()) {
             case "1": 
                 System.out.println("\nCity of Aaron Provisions in the Storehouse");
@@ -105,12 +106,17 @@ public class ListMenuView extends MenuView {
                 break;
             case "2":
                 // Use as an example for individual assignment. Put your PrintWriter code here.
+                try (PrintWriter out = new PrintWriter("provisions.txt")) {
+                    out.println("\nCity of Aaron Provisions in the Storehouse");
+                    for (ListItem provision : provisions) {
+                        out.println(provision.getName() + "\t" + provision.getNumber());
+                    }
+                } catch (IOException e) {
+                    System.out.println("File Error.");
+                }
                 break;
                 
         }
-        
-        
-        
         
     }
     
