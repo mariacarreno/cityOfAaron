@@ -106,26 +106,26 @@ public class ListMenuView extends MenuView {
 
     /**
      * @author npetersen
-     * Purpose: Display the list of the provisions that the player has
+     * Purpose: Display or print to a file the list of the provisions that the player has
      */
     public void listProvisions() {
-        
+        int inputValue = keyboard.nextInt();
         ArrayList<ListItem> provisions = game.getProvisions();
-        System.out.println("\nDo you want to view the provisions list or print the provisions list?\nEnter 1 to view the list\nEnter 2 to print the list.");
-        switch(keyboard.next()) {
-            case "1": 
+        System.out.println("\nDo you want to view the provisions list or print the provisions list?\nEnter 1 to view the list\nEnter 2 to print the list to a file");
+        switch(inputValue) {
+            case 1: // Display the tools list on the screen
                 System.out.println("\nCity of Aaron Provisions in the Storehouse");
                 for (ListItem provision : provisions) {
                     System.out.println(provision.getName() + "\t" + provision.getNumber());
                 }
                 break;
-            case "2":
-                // Use as an example for individual assignment. Put your PrintWriter code here.
+            case 2: // Print the tools list to a file
                 try (PrintWriter out = new PrintWriter("provisions.txt")) {
                     out.println("\nCity of Aaron Provisions in the Storehouse");
                     for (ListItem provision : provisions) {
                         out.println(provision.getName() + "\t" + provision.getNumber());
                     }
+                    System.out.println("The provisions list was saved to the file: provisions.txt");
                 } catch (IOException e) {
                     System.out.println("File Error.");
                 }
