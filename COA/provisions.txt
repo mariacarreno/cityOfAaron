@@ -1,0 +1,7 @@
+
+City of Aaron Provisions in the Storehouse
+flour	5
+salt	3
+pelts	8
+shoes	20
+seeds	200

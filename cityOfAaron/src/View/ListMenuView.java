@@ -75,19 +75,33 @@ public class ListMenuView extends MenuView {
     /**
      * Purpose: Display the list of tools that the player has
      */
-    
-    public void listTools() {
- ArrayList<ListItem> tools = game.getTool(); 
-        
 
-  System.out.println("Tools in the City of Aaron");
-  
+        public void listTools() {
+          
+                 ArrayList<ListItem> tools = game.getTool(); 
+        System.out.println("\nDo you want to view the Tools list or print the provisions list?\nEnter 1 to view the list\nEnter 2 to print the list.");
+        switch(keyboard.next()) {
+            case "1": 
+                System.out.println("Tools in the City of Aaron");
           for (ListItem tool: tools) {
             System.out.println(tool.getName() + "\t" + tool.getNumber());
         }
- 
- 
-    }
+                break;
+            case "2":
+                // Use as an example for individual assignment. Put your PrintWriter code here.
+                System.out.println("Tools list was saved to tools.txt");
+                try (PrintWriter out = new PrintWriter("tools.txt")) {
+                    out.println("\nCity of Aaron Tools in the Storehouse");
+                    for (ListItem tool : tools) {
+                        out.println(tool.getName() + "\t" + tool.getNumber());
+                    }
+                } catch (IOException e) {
+                    System.out.println("File Error.");
+                }
+                break;
+  
+        }
+   }
 
     /**
      * @author npetersen
