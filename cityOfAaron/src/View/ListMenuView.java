@@ -82,13 +82,14 @@ public class ListMenuView extends MenuView {
         System.out.println("\nDo you want to view the Tools list or print the provisions list?\nEnter 1 to view the list\nEnter 2 to print the list.");
         switch(keyboard.next()) {
             case "1": 
+                //displays the tools list to the screen
                 System.out.println("Tools in the City of Aaron");
           for (ListItem tool: tools) {
             System.out.println(tool.getName() + "\t" + tool.getNumber());
         }
                 break;
             case "2":
-                // Use as an example for individual assignment. Put your PrintWriter code here.
+                // write the tools list to a file
                 System.out.println("Tools list was saved to tools.txt");
                 try (PrintWriter out = new PrintWriter("tools.txt")) {
                     out.println("\nCity of Aaron Tools in the Storehouse");
