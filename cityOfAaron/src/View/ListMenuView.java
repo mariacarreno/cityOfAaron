@@ -66,10 +66,28 @@ public class ListMenuView extends MenuView {
         ArrayList<ListItem> animals = game.getAnimals();     
         
         System.out.println("Display a list of animals here");
-        
-        for (ListItem animal: animals) {
-            System.out.println(animal.getName() + "\t" + animal.getNumber());
+        System.out.println("\nDo you want to view the Animals list or print the Animals list?\nEnter 1 to view the list\nEnter 2 to print the list.");
+        switch(keyboard.next()) {
+            case "1": 
+                //displays the tools list to the screen
+              for (ListItem animal: animals) {
+                   System.out.println(animal.getName() + "\t" + animal.getNumber());
+               }
+               break;
+            case "2":
+                // write the Animals list to a file
+                System.out.println("Animals list was saved to Animals.txt");
+                try (PrintWriter out = new PrintWriter("Animals.txt")) {
+                    out.println("\nCity of Aaron the Animals in the Storehouse");
+                    for (ListItem animal: animals) {
+                        out.println(animal.getName() + "\t" + animal.getNumber());
+                    }
+                } catch (IOException e) {
+                    System.out.println("File Error.");
+                }
+                break;
         }
+        
     }
     
     /**
