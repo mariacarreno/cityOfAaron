@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package View;
+import model.*;
+import java.util.ArrayList;
+import control.*;
+import cityofaaron.*;
+
 
 /**
  *
@@ -40,7 +45,7 @@ public class GameMenuView extends MenuView {
     // ===================================       
     public void doAction(int option) {
         switch (option) {
-            case 1: //view map
+            case 1: 
                 viewMap();
                 break;
             case 2: //view lists menu
@@ -58,11 +63,18 @@ public class GameMenuView extends MenuView {
 
     }
 
-    
+
     // ===================================     
     public void viewMap() {
-        // Display Stub.
-        System.out.println("\nView Map.");
+        // Display Map.
+        Game game = CityOfAaron.getGame();
+
+        String showMap = game.getShowMap();
+ 
+        System.out.println("\n"
+                +   "   ***   VILLAGE MAP   ***\n"
+                + showMap);
+        
     }
     
 

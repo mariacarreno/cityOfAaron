@@ -19,6 +19,7 @@ public class Game implements Serializable {
     private Player thePlayer;
     private CropData theCropData;
     private Map map;
+    private String maps;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> provisions;
@@ -52,6 +53,16 @@ public class Game implements Serializable {
     } 
     
  
+    
+        public String getShowMap() {
+        return this.maps;
+    }
+
+    public void setShowMap(String _showmap) {
+        this.maps = _showmap;
+    }
+    
+    
     
     public ArrayList<ListItem> getTool() {
         return this.tools;

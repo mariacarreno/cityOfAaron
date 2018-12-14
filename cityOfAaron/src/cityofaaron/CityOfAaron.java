@@ -19,6 +19,7 @@ public class CityOfAaron {
     
     // variable for keeping a reference to the Game object
     private static Game theGame = null;
+    
     public static Game getGame() {
         return theGame;
     }

@@ -14,13 +14,18 @@ import cityofaaron.CityOfAaron;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 
 /**
  *
  * @author Rhett
  */
-public class GameControl implements Serializable {
+public class GameControl implements Serializable {    
+           
+           
     
     // Size of the Locations array
     private static final int MAX_ROW = 5;
@@ -106,6 +111,8 @@ public class GameControl implements Serializable {
             String river = "\nYou are in the river. The river is the source" +
                            "\nof life in our city. The river marks the eastern" +
                            "\nboundary of the city - it is wilderness to the East.";
+            String rivericon = "^^^";
+            
             
             // Create a new location object
             Location locMtns = new Location();
@@ -155,6 +162,48 @@ public class GameControl implements Serializable {
                 theMap.setLocation(m, 1, locForest);
             }
             
+            
+                    // Random map function
+      StringBuilder createMap = new StringBuilder();
+
+        int rows = 5;
+        int cols = 5;
+            createMap.append("     1     2     3     4     5   \n");
+        for (int i = 0; i <= rows; i++) {
+            createMap.append(i+" ");
+            for (int j = 0; j <= cols; j++) {
+
+                String[] randomMap = new String[] {"| ^^^ ","| ### ","| ||| ","| !!! ","| ~~~ "};
+                List<String> strList = Arrays.asList(randomMap);
+                Collections.shuffle(strList);
+                randomMap = strList.toArray(new String[strList.size()]);
+                
+                
+                if(j == 0){
+                 createMap.append(randomMap[j]);
+                 //System.out.print("^^^");   
+                } else if(j == 1){
+                    createMap.append(randomMap[j]);
+                 //System.out.print("###");   
+                } else if(j == 2){
+                    createMap.append(randomMap[j]);
+                 //System.out.print("|||");   
+                } else if(j == 3){
+                    createMap.append(randomMap[j]);
+                 //System.out.print("!!!");   
+                } else if(j == 4){
+                    createMap.append(randomMap[j]);
+                    createMap.append("|\n");
+                 //System.out.print("~~~");
+                 //System.out.print("\n");
+                }
+
+            }
+
+        }
+            String finishedMap = createMap.toString();   
+
+            game.setShowMap(finishedMap);
             game.setMap(theMap);
             
         }
