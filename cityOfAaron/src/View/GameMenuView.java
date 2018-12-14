@@ -73,7 +73,15 @@ public class GameMenuView extends MenuView {
  
         System.out.println("\n"
                 +   "   ***   VILLAGE MAP   ***\n"
-                + showMap);
+                + showMap
+                + "\n"
+                + "Key:\n"
+                + "^^^ - Mountains\n"
+                + "||| - City\n"     
+                + "!!! - FarmLand\n"  
+                + "### - Forest\n"  
+                + "~~~ - River\n"  
+        );
         
     }
     

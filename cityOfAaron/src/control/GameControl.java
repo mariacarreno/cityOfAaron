@@ -111,7 +111,6 @@ public class GameControl implements Serializable {
             String river = "\nYou are in the river. The river is the source" +
                            "\nof life in our city. The river marks the eastern" +
                            "\nboundary of the city - it is wilderness to the East.";
-            String rivericon = "^^^";
             
             
             // Create a new location object
