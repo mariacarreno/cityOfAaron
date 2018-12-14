@@ -218,5 +218,19 @@ public static void plantCropsView() {
     System.out.format("You have planted " + acresToPlant + " acres.");
     
 }
+
+// The storehousePlunderView method
+// Purpose: runs the method to plunder the storehouse.
+// Parameters: none
+// Returns: none
+public static void storehousePlunderView() {
+    try {
+        CropControl.doStorehousePlunder(cropData);
+        System.out.println("\nWhile the people slept, a band of Lamanite marauders plundered the storehouse leaving the city with " + cropData.getWheatInStore() + " bushels of wheat in storage.\nYou should probably sell some land to get some wheat back in the storehouse.");
+    } catch (CropException e) {
+        System.out.println(e.getMessage());
+    }
     
+}
+
 }

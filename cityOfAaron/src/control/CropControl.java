@@ -262,6 +262,19 @@ public class CropControl {
         return wheat;
 
       }
+         
+         
+         //The doStorehousePlunder method
+         //purpose: Carry out a plunder of the wheat in the storehouse
+         //Parameters: A reference to a CropData object
+         //Returns: none
+         public static void doStorehousePlunder(CropData cropData) throws CropException {
+             if (cropData.getWheatInStore() > 0) {
+                 cropData.setWheatInStore(0);
+             } else {
+                 throw new CropException("The band of Lamanite theives left empty handed.");
+             }
+         }
 
 }
 
