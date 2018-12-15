@@ -65,7 +65,7 @@ public class GameControl implements Serializable {
   
    // declared in the CityOfAaron class.
 
-            
+   game.setEndOfGame(false);           
         }
         
         
@@ -74,7 +74,7 @@ public class GameControl implements Serializable {
             
             CropData theCrops = new CropData();
             
-            theCrops.setYear(0);
+            theCrops.setYear(10);
             theCrops.setPopulation(100);
             theCrops.setNewPeople(5);
             theCrops.setCropYield(3);

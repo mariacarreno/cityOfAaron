@@ -111,6 +111,7 @@ public class GameMenuView extends MenuView {
         CropView.feedPeopleView();
         CropView.plantCropsView();
         CropView.storehousePlunderView();
+        CropView.endOfGameView();
     }
 
 }

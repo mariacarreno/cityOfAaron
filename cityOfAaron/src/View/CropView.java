@@ -175,9 +175,54 @@ public static void runCropView()
     feedPeopleView();
     displayCropsReportView();
     plantCropsView();
-    
+    endOfGameView();
     
 }
+
+
+     //* endOfGame method
+     //* @purpose to make it quit after ten
+     //* years have passed, or after the player is removed 
+     //* from office because he/she starved too many people
+     //* @param none
+     //* print message
+    public static void endOfGameView() {
+        Game game = CityOfAaron.getGame();
+        CropData cropData = game.getCropData();
+        try {
+            int WhoDied = cropData.getNumberWhoDied();
+            int currPop = cropData.getPopulation();
+            if (currPop > 0) {
+                if (WhoDied / currPop >= .5) {
+                    System.out.println(
+                            "\nI am sorry, game over...  you have left to die "
+                            + cropData.getNumberWhoDied() + " people.\n"
+                            + "You must leave City of Aaron \n" 
+                            + "You should have taken care of your people.\n");
+                    game.setEndOfGame(true);
+                } else if (cropData.getYear() >= 10) {
+                    System.out.println("\nCongratulations! \n"
+                            + "You were an excellent administrator of resources\n"
+                            + "Thank you for taking care of our beautiful town\n"
+                            + "We wish you a happy rest.\n"
+                            + "This is for the brave, and you are!");
+                    game.setEndOfGame(true);
+                }
+            } else {
+                System.out.println(
+                        "\nI am sorry, game over...  you have left to die"
+                        + cropData.getNumberWhoDied() + " people\n"
+                        + "You do not have people to take care of \n"
+                        + "You must leave City of Aaron.\n");
+                game.setEndOfGame(true);
+            }
+        } catch (Exception e) {
+            System.out.println("\nExist an error. Game Over...");
+            game.setEndOfGame(true);
+        }
+
+    }
+
 
 
 // The plantCropsView method()

@@ -23,6 +23,7 @@ public class Game implements Serializable {
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> provisions;
+    private boolean endOfGame;
  
     
     
@@ -92,7 +93,27 @@ public class Game implements Serializable {
         this.provisions = provisions;
     }
     
-  
+  /**
+     * setEndOfGame
+     * @purpose the end of the current game
+     * expecting a boolean end of game status.
+     * @param _endOfGame 
+     * @return none
+     */
+    public void setEndOfGame (boolean _endOfGame) {
+        this.endOfGame = _endOfGame;
+    }
+    
+    /**
+     * setEndOfGame
+     * @purpose the end of the current game
+     * returning a boolean end of game status
+     * @param none 
+     * @return boolean (endOfGame)
+     */    
+    public boolean getEndOfGame() {
+        return this.endOfGame;
+    }
 
 
   
